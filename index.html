@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shree Ganeshay namah — An auspicious blessing followed by pure CSS animation.">
+  <title>Shree Ganeshay namah — CSS Animation</title>
+  
+  <!-- Modern Typography Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+
+  <noscript>
+    <style>
+      #intro-screen { display: none !important; }
+      body { overflow: auto !important; }
+      .stage { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
+      .stage .card { animation: card-in 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) both !important; }
+      .stage .eyebrow { animation: fade-up 0.8s ease 0.2s both !important; }
+      .stage .letter { animation: letter-in 0.9s cubic-bezier(0.16, 0.82, 0.23, 1) both !important; animation-delay: calc(0.38s + var(--i) * 0.075s) !important; }
+      .stage .cursor { animation: cursor-in 0.3s ease 1.35s both, blink 1s step-end 1.65s infinite !important; }
+      .stage .tagline { animation: fade-up 0.9s ease 1.55s both !important; }
+      .stage .rule { animation: rule-grow 0.8s ease 1.85s both !important; }
+      .stage .hint { animation: fade-up 0.9s ease 2s both !important; }
+    </style>
+  </noscript>
+</head>
+<body class="intro-active">
+
+  <!-- ========================================================
+       SACRED INTRO SCREEN: Shree Ganeshay namah
+       ======================================================== -->
+  <aside id="intro-screen" class="intro-screen" role="dialog" aria-modal="true" aria-label="Auspicious Introduction">
+    <!-- Atmospheric Spiritual Backdrop -->
+    <div class="intro-backdrop" aria-hidden="true">
+      <div class="intro-aura intro-aura--primary"></div>
+      <div class="intro-aura intro-aura--secondary"></div>
+      
+      <!-- Floating Sacred Golden Embers -->
+      <div class="intro-embers">
+        <span class="ember" style="--x: 12%; --delay: 0.2s; --dur: 5s; --scale: 1.2;"></span>
+        <span class="ember" style="--x: 25%; --delay: 1.4s; --dur: 4.2s; --scale: 0.8;"></span>
+        <span class="ember" style="--x: 38%; --delay: 0.7s; --dur: 6s; --scale: 1.4;"></span>
+        <span class="ember" style="--x: 52%; --delay: 2.1s; --dur: 4.8s; --scale: 0.9;"></span>
+        <span class="ember" style="--x: 64%; --delay: 0.4s; --dur: 5.5s; --scale: 1.1;"></span>
+        <span class="ember" style="--x: 78%; --delay: 1.8s; --dur: 4.5s; --scale: 1.3;"></span>
+        <span class="ember" style="--x: 88%; --delay: 0.9s; --dur: 5.2s; --scale: 0.7;"></span>
+        <span class="ember" style="--x: 48%; --delay: 2.8s; --dur: 6.2s; --scale: 1.5;"></span>
+      </div>
+
+      <!-- Sacred Mandala Geometry Background -->
+      <div class="sacred-mandala-bg"></div>
+    </div>
+
+    <!-- Sacred Content Container -->
+    <div class="intro-content">
+      
+      <!-- Divine Lord Ganesha Sacred SVG Emblem -->
+      <div class="ganesha-emblem-wrap">
+        <div class="ganesha-halo-glow" aria-hidden="true"></div>
+        <svg class="ganesha-svg" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Lord Ganesha Sacred Icon">
+          <defs>
+            <!-- Gold Linear Gradient -->
+            <linearGradient id="goldLinear" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#fff8e1" />
+              <stop offset="25%" stop-color="#ffd54f" />
+              <stop offset="50%" stop-color="#ffb300" />
+              <stop offset="75%" stop-color="#ff8f00" />
+              <stop offset="100%" stop-color="#ffe082" />
+            </linearGradient>
+
+            <!-- Shimmer Highlight Gradient -->
+            <linearGradient id="shimmerGold" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffb300" />
+              <stop offset="50%" stop-color="#ffffff" />
+              <stop offset="100%" stop-color="#ff8f00" />
+            </linearGradient>
+
+            <!-- Sacred Kumkum Red Gradient -->
+            <linearGradient id="sacredRed" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ff4444" />
+              <stop offset="100%" stop-color="#c62828" />
+            </linearGradient>
+
+            <!-- Glow Filters -->
+            <filter id="divineGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="3.5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+
+            <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="2" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- Outer Sacred Radiant Chakra Rings -->
+          <g class="chakra-halo">
+            <circle cx="120" cy="115" r="96" stroke="url(#goldLinear)" stroke-width="1" stroke-dasharray="2 6" opacity="0.45" class="halo-spin" />
+            <circle cx="120" cy="115" r="88" stroke="url(#goldLinear)" stroke-width="1.4" opacity="0.6" />
+            <circle cx="120" cy="115" r="80" stroke="url(#goldLinear)" stroke-width="0.8" stroke-dasharray="4 8" opacity="0.35" class="halo-spin-reverse" />
+            
+            <!-- Auspicious Cardinal Points & Rays -->
+            <g class="halo-rays" stroke="url(#goldLinear)" stroke-width="1.2" opacity="0.55">
+              <line x1="120" y1="12" x2="120" y2="24" />
+              <line x1="120" y1="206" x2="120" y2="218" />
+              <line x1="17" y1="115" x2="29" y2="115" />
+              <line x1="211" y1="115" x2="223" y2="115" />
+              <line x1="47" y1="42" x2="56" y2="51" />
+              <line x1="184" y1="179" x2="193" y2="188" />
+              <line x1="193" y1="42" x2="184" y2="51" />
+              <line x1="56" y1="179" x2="47" y2="188" />
+            </g>
+          </g>
+
+          <!-- Crown (Mukut) with Jewels -->
+          <g class="crown-group" filter="url(#divineGlow)">
+            <circle cx="120" cy="27" r="3.5" fill="url(#shimmerGold)" />
+            <path d="M 120 31 L 128 49 L 112 49 Z" fill="url(#goldLinear)" />
+            <path d="M 108 51 L 132 51 L 138 65 L 102 65 Z" fill="url(#goldLinear)" />
+            <path d="M 98 67 L 142 67 L 146 77 L 94 77 Z" fill="url(#goldLinear)" />
+            
+            <!-- Inset Crown Jewels -->
+            <circle cx="120" cy="57" r="2.4" fill="url(#sacredRed)" />
+            <circle cx="111" cy="72" r="1.6" fill="#ffffff" />
+            <circle cx="120" cy="72" r="2.2" fill="url(#sacredRed)" />
+            <circle cx="129" cy="72" r="1.6" fill="#ffffff" />
+          </g>
+
+          <!-- Sacred Ears (Supakar) -->
+          <!-- Left Ear -->
+          <path d="M 95 78 C 66 80 46 104 50 132 C 54 154 75 158 90 148"
+                stroke="url(#goldLinear)" stroke-width="3.4" stroke-linecap="round" fill="none" filter="url(#softGlow)" />
+          <path d="M 87 90 C 69 93 61 110 66 128"
+                stroke="url(#goldLinear)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.65" />
+
+          <!-- Right Ear -->
+          <path d="M 145 78 C 174 80 194 104 190 132 C 186 154 165 158 150 148"
+                stroke="url(#goldLinear)" stroke-width="3.4" stroke-linecap="round" fill="none" filter="url(#softGlow)" />
+          <path d="M 153 90 C 171 93 179 110 174 128"
+                stroke="url(#goldLinear)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.65" />
+
+          <!-- Sacred Tilak (Forehead Chandan & Kumkum) -->
+          <g class="tilak-group">
+            <path d="M 110 88 Q 120 102 130 88" stroke="#ffe082" stroke-width="2.6" stroke-linecap="round" fill="none" />
+            <path d="M 108 83 Q 120 95 132 83" stroke="#ffd54f" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.8" />
+            <path d="M 120 80 L 120 98" stroke="url(#sacredRed)" stroke-width="3.8" stroke-linecap="round" />
+            <circle cx="120" cy="100" r="2.8" fill="url(#sacredRed)" filter="url(#softGlow)" />
+          </g>
+
+          <!-- Peaceful Meditative Eyes -->
+          <path d="M 102 110 Q 110 114 116 110" stroke="#fff8e1" stroke-width="2.2" stroke-linecap="round" fill="none" />
+          <path d="M 124 110 Q 130 114 138 110" stroke="#fff8e1" stroke-width="2.2" stroke-linecap="round" fill="none" />
+
+          <!-- Tusks (Ekadanta) -->
+          <!-- Left Tusk: unbroken sacred ivory -->
+          <path d="M 105 138 L 95 152 L 105 146 Z" fill="#ffffff" stroke="#ffecb3" stroke-width="0.8" />
+          <!-- Right Tusk: traditionally broken, symbol of sacred intellect -->
+          <path d="M 135 138 L 143 145 L 138 145 Z" fill="#ffffff" opacity="0.85" />
+
+          <!-- Divine Curved Trunk (Vakratunda) reaching towards left (Vama-mukhi) -->
+          <path d="M 116 114 C 116 134 118 152 110 165 C 102 178 84 180 74 170 C 64 160 68 144 80 138 C 90 134 97 140 94 148 C 91 154 84 156 80 152"
+                stroke="url(#goldLinear)" stroke-width="4.2" stroke-linecap="round" fill="none" filter="url(#divineGlow)" />
+          
+          <!-- Harmonious Om Contour Flow -->
+          <path d="M 124 114 C 126 134 124 154 132 166 C 140 180 156 181 166 170 C 176 158 172 140 156 132"
+                stroke="url(#goldLinear)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.8" />
+
+          <!-- Auspicious Modak at trunk blessing reach -->
+          <g class="modak-group" transform="translate(76, 137)">
+            <circle cx="8" cy="8" r="7.5" fill="url(#shimmerGold)" filter="url(#softGlow)" />
+            <path d="M 8 1 L 6 5 L 10 5 Z" fill="#ff8f00" />
+            <circle cx="6" cy="6" r="1.2" fill="#ffffff" />
+            <circle cx="10" cy="8" r="1" fill="#ffe082" />
+            <!-- Twinkling Sparkle on Modak -->
+            <path d="M 15 2 L 16 5 L 19 6 L 16 7 L 15 10 L 14 7 L 11 6 L 14 5 Z" fill="#ffffff" />
+          </g>
+
+          <!-- Lotus Throne (Padmasana) at base -->
+          <g class="lotus-group" filter="url(#softGlow)">
+            <path d="M 120 188 C 114 175 126 175 120 188 Z" fill="url(#shimmerGold)" />
+            <path d="M 120 196 C 108 184 94 186 86 198 C 102 201 116 200 120 196 Z" fill="url(#goldLinear)" />
+            <path d="M 120 196 C 132 184 146 186 154 198 C 138 201 124 200 120 196 Z" fill="url(#goldLinear)" />
+            <path d="M 72 204 C 96 210 144 210 168 204 C 150 200 90 200 72 204 Z" fill="url(#goldLinear)" opacity="0.75" />
+          </g>
+        </svg>
+      </div>
+
+      <!-- Sacred Sanskrit Invocation Pill -->
+      <div class="sacred-pill" aria-hidden="true">
+        <span class="sacred-pill__om">ॐ</span>
+        <span class="sacred-pill__devanagari">॥ श्री गणेशाय नमः ॥</span>
+        <span class="sacred-pill__om">ॐ</span>
+      </div>
+
+      <!-- Prominent Main Title Requested by User -->
+      <h1 class="intro-headline" aria-label="Shree Ganeshay namah">
+        <span class="intro-headline__part intro-headline__part--shree">Shree</span>
+        <span class="intro-headline__part intro-headline__part--ganeshay">Ganeshay</span>
+        <span class="intro-headline__part intro-headline__part--namah">namah</span>
+      </h1>
+
+      <!-- Auspicious Shloka and Meaning -->
+      <div class="sacred-shloka-card">
+        <p class="shloka-sanskrit" lang="sa">
+          वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br>
+          निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥
+        </p>
+        <div class="shloka-divider" aria-hidden="true">
+          <span class="shloka-divider__dot"></span>
+          <span class="shloka-divider__line"></span>
+          <span class="shloka-divider__dot"></span>
+        </div>
+        <p class="shloka-english">
+          Salutations to the Supreme Lord Ganesha, remover of all obstacles and blesser of auspicious beginnings.
+        </p>
+      </div>
+
+      <!-- Auspicious Diya Flame -->
+      <div class="sacred-diya" aria-hidden="true">
+        <div class="diya-glow"></div>
+        <div class="diya-flame">
+          <span class="flame-core"></span>
+          <span class="flame-inner"></span>
+        </div>
+        <div class="diya-bowl"></div>
+      </div>
+
+      <!-- Intro Progress Bar & Countdown -->
+      <div class="intro-progress-container" aria-hidden="true">
+        <div class="intro-progress-track">
+          <div id="intro-progress-bar" class="intro-progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Interactive Actions -->
+      <div class="intro-actions">
+        <button type="button" id="enter-btn" class="intro-enter-btn" aria-label="Enter Experience">
+          <span class="enter-btn__text">Enter Experience</span>
+          <span class="enter-btn__icon" aria-hidden="true">✦</span>
+        </button>
+
+        <button type="button" id="sound-toggle" class="sound-toggle" aria-label="Toggle Temple Chime Sound" title="Chime sound: ON (Click to toggle)">
+          <span class="sound-toggle__icon" aria-hidden="true">🔔</span>
+        </button>
+      </div>
+
+      <p class="intro-hint">
+        Auto-advancing in <strong id="countdown-text">4</strong>s • Click anywhere or press <kbd>Space</kbd>
+      </p>
+
+    </div>
+  </aside>
+
+  <!-- ========================================================
+       TOP NAVIGATION BAR: Replay Intro Button
+       ======================================================== -->
+  <header class="top-nav" aria-label="Site Header">
+    <button type="button" id="replay-btn" class="replay-btn" aria-label="Replay Shree Ganeshay namah blessing intro" title="Replay Auspicious Intro">
+      <span class="replay-btn__om" aria-hidden="true">ॐ</span>
+      <span class="replay-btn__label">Shree Ganeshay namah</span>
+      <span class="replay-btn__action" aria-hidden="true">Replay ↺</span>
+    </button>
+  </header>
+
+  <!-- ========================================================
+       MAIN APPLICATION BACKGROUND & STAGE
+       ======================================================== -->
+  <div class="backdrop" aria-hidden="true">
+    <span class="orb orb--amber"></span>
+    <span class="orb orb--pink"></span>
+    <span class="orb orb--blue"></span>
+
+    <div class="stars">
+      <i style="--x: 8%;  --y: 14%; --size: 3px; --delay: 0s;   --duration: 4s;"></i>
+      <i style="--x: 20%; --y: 72%; --size: 2px; --delay: 1.2s; --duration: 5s;"></i>
+      <i style="--x: 31%; --y: 28%; --size: 4px; --delay: 2.1s; --duration: 6s;"></i>
+      <i style="--x: 44%; --y: 88%; --size: 2px; --delay: .4s;  --duration: 4.5s;"></i>
+      <i style="--x: 56%; --y: 10%; --size: 2px; --delay: 1.8s; --duration: 5.5s;"></i>
+      <i style="--x: 68%; --y: 67%; --size: 3px; --delay: .8s;  --duration: 4s;"></i>
+      <i style="--x: 79%; --y: 24%; --size: 2px; --delay: 2.7s; --duration: 6s;"></i>
+      <i style="--x: 91%; --y: 82%; --size: 4px; --delay: 1.4s; --duration: 5s;"></i>
+      <i style="--x: 95%; --y: 46%; --size: 2px; --delay: .2s;  --duration: 4.5s;"></i>
+      <i style="--x: 14%; --y: 46%; --size: 2px; --delay: 3s;   --duration: 5s;"></i>
+      <i style="--x: 73%; --y: 91%; --size: 2px; --delay: 2.3s; --duration: 4s;"></i>
+      <i style="--x: 39%; --y: 6%;  --size: 3px; --delay: .9s;  --duration: 5.5s;"></i>
+    </div>
+
+    <div class="rings">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <main class="stage" aria-live="polite">
+    <section class="card" aria-labelledby="greeting">
+      <p class="eyebrow">
+        <span class="eyebrow__dot"></span>
+        Pure CSS animation
+      </p>
+
+      <h1 class="greeting" id="greeting" aria-label="Hello World">
+        <span class="word" aria-hidden="true">
+          <span class="letter" style="--i: 0"><span>H</span></span>
+          <span class="letter" style="--i: 1"><span>e</span></span>
+          <span class="letter" style="--i: 2"><span>l</span></span>
+          <span class="letter" style="--i: 3"><span>l</span></span>
+          <span class="letter" style="--i: 4"><span>o</span></span>
+        </span>
+
+        <span class="word word--accent" aria-hidden="true">
+          <span class="letter" style="--i: 5"><span>W</span></span>
+          <span class="letter" style="--i: 6"><span>o</span></span>
+          <span class="letter" style="--i: 7"><span>r</span></span>
+          <span class="letter" style="--i: 8"><span>l</span></span>
+          <span class="letter" style="--i: 9"><span>d</span></span>
+          <span class="cursor"></span>
+        </span>
+      </h1>
+
+      <p class="tagline">
+        A little greeting, brought to life with nothing but
+        <strong>HTML &amp; CSS</strong>.
+      </p>
+
+      <div class="rule" aria-hidden="true"></div>
+
+      <p class="hint">
+        <span class="hint__icon" aria-hidden="true">✦</span>
+        Hover over the letters
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
